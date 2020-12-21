@@ -1,0 +1,37 @@
+/ * 
+Script de spam na Web do WhatsApp escrito por flaredragon.
+========================================================== ======================================
+AVISO DE RESPONSABILIDADE: Não me responsabilizo por nenhum dano causado com este script. 
+========================================================== ======================================
+Uso: Copie todo este script (Ctrl + A, Ctrl + C). Visite a Web do WhatsApp, selecione seu 
+contato desejado e pressione Ctrl + Shift + I para, cole-o no console e pressione Enter.
+(Nota Imp - Whatsapp controla a taxa de envio de mensagens, portanto, enviar ~ 500 juntos pode 
+fazer com que seu Whatsapp trave, então use o script com inteligência)
+========================================================== ======================================
+* /
+
+// Para obter o componente React
+function  findReactComponent ( dom )  {
+    para  ( chave var  em dom )  
+        if  ( key . startsWith ( "__reactInternalInstance $" ) )  {
+            var  compInternals  =  dom [ chave ] . _currentElement ;
+            var  compWrapper  =  compInternals . _owner ;
+            var  comp  =  compWrapper . _instance ;
+            return  comp ;
+        }
+    return  null ;
+} ;
+
+var  inputComponent  =  findReactComponent ( document . getElementsByClassName ( 'block-compose' ) [ 0 ] ) ; 
+// Obtenha o componente de reação para a entrada do bate-papo
+var  chat  =  inputComponent . adereços . conversar ;
+// Defina o número de vezes para enviar no loop Ex. - 10 Agora
+para ( var  i = 0 ; i < 10 ; i ++ )
+{  
+  // Atraso ajuda no envio de mensagens em uma taxa mais rápida
+    setTimeout ( function ( ) { 
+
+        bate-papo . sendMessage ( 'Digite qualquer mensagem aqui' ) ;
+    } ,  1000 ) ; 
+	
+}
